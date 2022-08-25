@@ -13,10 +13,7 @@
 	"packageRules": [
 		{
 			"description": "Disable updating AGP in main project, they have a specific version, and will break the matrix. Allow patches.",
-			"matchPackageNames": [
-				"com.android.tools.build:gradle",
-				"com.android.application"
-			],
+      			"matchPackagePatterns": ["^android-gradle"],
 			"matchPaths": [
 				"+(build.gradle.kts)",
 				"+(*/build.gradle.kts)",
@@ -28,10 +25,7 @@
 		},
 		{
 			"description": "Disable updating AGP in debug projects, they have a specific version. Allow patches.",
-			"matchPackageNames": [
-				"com.android.tools.build:gradle",
-				"com.android.application"
-			],
+      			"matchPackagePatterns": ["^android-gradle"],
 			"matchPaths": [
 				"+(docs/debug/agp*-gradle*/**/build.gradle)",
 				"+(docs/debug/agp*-gradle*/**/build.gradle.kts)",
